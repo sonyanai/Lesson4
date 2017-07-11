@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View v){
-        mTextView.setText(mEditText.getText());
+        mTextView.setText(mEditText.getText().toString());
     }
 
 }
