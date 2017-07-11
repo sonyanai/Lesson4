@@ -13,14 +13,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHolizontal="true"
+        android:layout_centerHorizontal="true"
         android:text="View1"
         android:id="@+id/textView1"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHolizontal="true"
+        android:layout_centerHorizontal="true"
         android:text="View2"
         android:layout_topLeftOf="@+id/textView1"
         android:id="@+id/textView2"/>
@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHolizontal="true"
+        android:layout_centerHorizontal="true"
         android:text="View3"
         android:layout_topRightOf="@+id/textView1"
         android:id="@+id/textView3"/>
@@ -36,7 +36,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHolizontal="true"
+        android:layout_centerHorizontal="true"
         android:text="View4"
         android:layout_below="@+id/textView1"
         android:id="@+id/textView4"/>
