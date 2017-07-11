@@ -5,8 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,12 +15,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Button button1 = (Button) findViewById(R.id.button1);
-        button1.setOnClickListener(this);
-        //setOnClickListenerメソッドの引数にはonClickメソッドを実装したクリックリスナークラスを渡す必要があります。
-        //今回はMainActivityクラス自身(this)を設定しonClickメソッドを実装しています。
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("UI_PARTS", "ボタンをタップしました");
+            }
+        });
+
+        TextView textView = (TextView) findViewById(R.id.textView);
+        textView.setText("テキスト");
     }
-    @Override
-    public void onClick(View v) {
-        Log.d("UI_PARTS","ボタンをタップしました");
-    }
+
 }
