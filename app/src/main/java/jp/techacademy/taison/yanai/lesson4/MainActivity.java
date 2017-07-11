@@ -2,12 +2,15 @@ package jp.techacademy.taison.yanai.lesson4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.EditText;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    TextView mTextView;
+    EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,15 +18,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button button1 = (Button) findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("UI_PARTS", "ボタンをタップしました");
-            }
-        });
+        button1.setOnClickListener(this);
 
-        TextView textView = (TextView) findViewById(R.id.textView);
-        textView.setText("テキスト");
+        mTextView = (TextView) findViewById(R.id.textView);
+        mEditText = (EditText) findViewById(R.id.editText);
+    }
+    @Override
+    public void onClick(View v){
+        mTextView.setText(mEditText.getText());
     }
 
 }
