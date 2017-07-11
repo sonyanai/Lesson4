@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="jp.techacademy.taison.yanai.lesson4.MainActivity">
 
-
-
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BUTTON1"
-        android:id="@+id/button1" />
-    <Button
+        android:layout_centerHolizontal="true"
+        android:text="View1"
+        android:id="@+id/textView1"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BUTTON2"
-        android:id="@+id/button2" />
+        android:layout_centerHolizontal="true"
+        android:text="View2"
+        android:layout_topLeftOf="@+id/textView1"
+        android:id="@+id/textView2"/>
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHolizontal="true"
+        android:text="View3"
+        android:layout_topRightOf="@+id/textView1"
+        android:id="@+id/textView3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHolizontal="true"
+        android:text="View4"
+        android:layout_below="@+id/textView1"
+        android:id="@+id/textView4"/>
+
+
+</RelativeLayout>
