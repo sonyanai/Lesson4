@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.util.Log;
+import android.widget.TimePicker;
+import android.app.TimePickerDialog;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(this);
 
+        Button button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(this);
+
         mTextView = (TextView) findViewById(R.id.textView);
         mEditText = (EditText) findViewById(R.id.editText);
     }
@@ -35,38 +40,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mTextView.setText(mEditText.getText().toString());
         } else if (v.getId() == R.id.button2) {
             showAlertDialog();
+        } else if (v.getId() == R.id.button3) {
+            showTimePickerDialog();
         }
     }
 
-    private void showAlertDialog(){
+    private void showAlertDialog() {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setTitle("タイトル");
         alertDialogBuilder.setMessage("メッセージ");
 
         alertDialogBuilder.setPositiveButton("肯定",
-                new DialogInterface.OnClickListener(){
+                new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog,int which){
-                        Log.d("UI_PARTS","肯定ボタン");
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("UI_PARTS", "肯定ボタン");
                     }
                 });
 
         alertDialogBuilder.setNeutralButton("中立",
-                new DialogInterface.OnClickListener(){
+                new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog,int which){
-                        Log.d("UI_PARTS","中立ボタン");
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("UI_PARTS", "中立ボタン");
                     }
                 });
 
         alertDialogBuilder.setNegativeButton("否定",
-                new DialogInterface.OnClickListener(){
+                new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog,int which){
-                        Log.d("UI_PARTS","否定ボタン");
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d("UI_PARTS", "否定ボタン");
                     }
                 });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
+
+        private void showTimePickerDialog() {
+            TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                    new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                            Log.d("UI_PARTS", String.valueOf(hourOfDay) + ":" + String.valueOf(minute));
+                        }
+                    },
+                    13,
+                    0,
+                    true);
+            timePickerDialog.show();
+        }
 }
