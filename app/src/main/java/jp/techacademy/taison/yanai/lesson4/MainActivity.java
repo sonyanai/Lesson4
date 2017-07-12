@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
 
-        /*alertDialogBuilder.setPositiveButton("中立",
+        alertDialogBuilder.setNeutralButton("中立",
                 new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog,int which){
@@ -59,13 +59,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
 
-        alertDialogBuilder.setPositiveButton("否定",
+        alertDialogBuilder.setNegativeButton("否定",
                 new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog,int which){
                         Log.d("UI_PARTS","否定ボタン");
                     }
-                });*/
+                });
         AlertDialog alertDialog = alertDialogBuilder.create();
         alertDialog.show();
     }
